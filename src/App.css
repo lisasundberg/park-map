@@ -35,3 +35,17 @@
 .pin-title {
   font-weight: bold;
 }
+
+
+.hidden {
+  display: none;
+}
+
+.visible {
+ display: block;
+ z-index: 999;
+ width: 400px;
+ min-height: 20vh;
+ background-color: white;
+ border: 2px solid white;
+}

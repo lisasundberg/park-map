@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import Pin from './Pin';
 
+
 class Map extends Component {
   static defaultProps = {
     center: {
@@ -12,6 +13,7 @@ class Map extends Component {
   };
 
   render() {
+
     return (
       // Important! Always set the container height explicitly
       <div className="map">
@@ -23,7 +25,12 @@ class Map extends Component {
           <Pin
             lat={59.312555}
             lng={18.087676}
-            text="Vitabergsparken"
+            title="Vitabergsparken"
+          />
+          <Pin
+            lat={59.313137}
+            lng={18.037121}
+            title="Tantolunden"
           />
         </GoogleMapReact>
       </div>
