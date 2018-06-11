@@ -24,3 +24,14 @@
   height:100vh;
   width: 100%;
 }
+
+.pin {
+  text-align: center;
+  transform:translate(-10px, -40px);
+}
+.fa-map-marker {
+  font-size: 40px;
+}
+.pin-title {
+  font-weight: bold;
+}

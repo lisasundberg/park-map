@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-
-const AnyReactComponent = ({ text }) => <div><i class="fas fa-map-marker"></i><br/>{text}</div>;
+import Pin from './Pin';
 
 class Map extends Component {
   static defaultProps = {
@@ -21,10 +20,10 @@ class Map extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          <AnyReactComponent
+          <Pin
             lat={59.312555}
             lng={18.087676}
-            text={'Vitabergsparken'}
+            text="Vitabergsparken"
           />
         </GoogleMapReact>
       </div>
