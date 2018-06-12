@@ -5,6 +5,11 @@ import InfoBox from './InfoBox';
 import DisplayInfo from './DisplayInfo';
 
 class Map extends Component {
+  state = {
+    park: '',
+    infoBoxClassName: 'hidden'
+  }
+
   static defaultProps = {
     center: {
       lat: 59.31,
@@ -19,11 +24,14 @@ class Map extends Component {
   };
 
   displayInfo = (event, park) => {
-    // if (this.state.className === "hidden"){
-    //   this.setState({ className: 'visible' });
-    // } else {
-    //   this.setState({ className: 'hidden' });
-    // }
+    if (this.state.infoBoxClassName === 'hidden'){
+      this.setState({ infoBoxClassName: 'visible' });
+    } else {
+        this.setState({ infoBoxClassName: 'hidden' });
+    }
+    this.setState({
+      park: event.target.id
+    })
     console.log(event.target.id);
   }
 
@@ -53,7 +61,7 @@ class Map extends Component {
           { places }
         </GoogleMapReact>
         <DisplayInfo element={ document.getElementById('modal') }>
-          <InfoBox passData={ "hej! detta e en park" } />
+          <InfoBox className={ this.state.infoBoxClassName } passData={ this.state.park } />
         </DisplayInfo>
       </div>
     );
