@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import Pin from './Pin';
+import InfoBox from './InfoBox';
+import DisplayInfo from './DisplayInfo';
 
 class Map extends Component {
   static defaultProps = {
@@ -11,9 +13,19 @@ class Map extends Component {
     zoom: 12,
     greatPlaces: [
       {id: 'Vitabergsparken', lat: 59.31255, lng: 18.087676},
-      {id: 'Tantolunden', lat: 59.313137, lng: 18.037121}
+      {id: 'Tantolunden', lat: 59.313137, lng: 18.037121},
+      {id: 'Gröndalsparken', lat: 59.314, lng: 18.0}
     ]
   };
+
+  displayInfo = (event, park) => {
+    // if (this.state.className === "hidden"){
+    //   this.setState({ className: 'visible' });
+    // } else {
+    //   this.setState({ className: 'hidden' });
+    // }
+    console.log(event.target.id);
+  }
 
   render() {
     const places = this.props.greatPlaces
@@ -22,9 +34,11 @@ class Map extends Component {
         return (
           <Pin
             key={id}
+            id={id}
             lat={lat}
             lng={lng}
             title={id}
+            onClick={this.displayInfo}
           />
         );
       });
@@ -38,6 +52,9 @@ class Map extends Component {
           defaultZoom={this.props.zoom}>
           { places }
         </GoogleMapReact>
+        <DisplayInfo element={ document.getElementById('modal') }>
+          <InfoBox passData={ "hej! detta e en park" } />
+        </DisplayInfo>
       </div>
     );
   }
