@@ -5,9 +5,15 @@ function InfoBox(props) {
     props.getDivStyle();
   }
   return (
-    <div className={`info-box ${props.className}`}>
-      <h2>{ props.passData }</h2>
-      <button onClick={ closeInfoBox }>Close</button>
+    <div className={`infoBox ${props.className}`}>
+      <div>
+        <h2>{ props.passData }</h2>
+      </div>
+      <div>
+        <button onClick={ closeInfoBox } className="close">
+          <i className="fas fa-window-close"></i>
+        </button>
+      </div>
     </div>
   );
 }

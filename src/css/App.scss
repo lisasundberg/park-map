@@ -46,12 +46,13 @@
   display: none!important;
   transform: translateY(50vh);
 }
-.info-box {
+.infoBox {
   transform: translateY(50vh);
 }
 
 .visible {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   box-sizing: border-box;
   position: absolute;
   width: 100%;
@@ -61,4 +62,18 @@
   color:#f6f6f6;
   padding: 2em;
   transform: translateY(0);
+}
+
+
+/***************************************/
+/*************** BUTTONS ***************/
+/***************************************/
+.close {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+.fa-window-close {
+  font-size: 2em;
 }

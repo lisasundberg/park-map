@@ -1,0 +1,69 @@
+@charset "UTF-8";
+.App {
+  text-align: center; }
+
+.App-header {
+  background-color: #222;
+  height: 7vh;
+  padding: 10px;
+  color: white;
+  box-sizing: border-box; }
+
+.App-title {
+  font-size: 1em; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.map {
+  height: 93vh;
+  width: 100%; }
+
+.pin {
+  text-align: center;
+  transform: translate(-10px, -40px); }
+
+.fa-map-marker {
+  font-size: 40px; }
+
+.pin-title {
+  font-weight: bold; }
+
+.hidden, .info-box, .visible, .animate {
+  -webkit-transition: transform 500ms;
+  transition: transform 500ms; }
+
+.hidden  {
+  display: none !important;
+  transform: translateY(50vh); }
+
+.infoBox {
+  transform: translateY(50vh); }
+
+.visible {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  bottom: 0;
+  background: #333;
+  color: #f6f6f6;
+  padding: 2em;
+  transform: translateY(0); }
+
+/***************************************/
+/*************** BUTTONS ***************/
+/***************************************/
+.close {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff; }
+
+.fa-window-close {
+  font-size: 2em; }
