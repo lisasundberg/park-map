@@ -17,9 +17,30 @@ class Map extends Component {
     },
     zoom: 12,
     greatPlaces: [
-      {id: 'Vitabergsparken', lat: 59.31255, lng: 18.087676},
-      {id: 'Tantolunden', lat: 59.313137, lng: 18.037121},
-      {id: 'Gröndalsparken', lat: 59.314, lng: 18.0}
+      { id: 'Vitabergsparken',
+        lat: 59.31255,
+        lng: 18.087676,
+        features: {
+          swimming: false,
+          bbq: true
+        }
+      },
+      { id: 'Tantolunden',
+        lat: 59.313137,
+        lng: 18.037121,
+        features: {
+          swimming: true,
+          bbq: true
+        }
+      },
+      { id: 'Gröndalsparken',
+        lat: 59.314,
+        lng: 18.0,
+        features: {
+          swimming: false,
+          bbq: true
+        }
+      }
     ]
   };
 
@@ -31,13 +52,17 @@ class Map extends Component {
   }
 
   closeInfoBox = () => {
-    this.setState({ infoBoxClassName: 'hidden' });
+    this.setState({ infoBoxClassName: '' });
+    setTimeout(() => {
+      this.setState({ infoBoxClassName: 'hidden' });
+    }, 500);
   }
 
   render() {
-    const places = this.props.greatPlaces
-      .map(place => {
-        const { id, lat, lng } = place;
+    const parks = this.props.greatPlaces
+      .map(park => {
+        const { id, lat, lng } = park;
+        const { swimming, bbq } = park.features;
         return (
           <Pin
             key={id}
@@ -51,16 +76,19 @@ class Map extends Component {
       });
 
     return (
-      // Important! Always set the container height explicitly
       <div className="map">
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyCTpQfzQtswW-XYC8SiR_IHKVCvutdgF7g' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}>
-          { places }
+          { parks }
         </GoogleMapReact>
         <DisplayInfo element={ document.getElementById('modal') }>
-          <InfoBox getDivStyle={ this.closeInfoBox } className={ this.state.infoBoxClassName } passData={ this.state.park } />
+          <InfoBox
+            getDivStyle={ this.closeInfoBox }
+            className={ this.state.infoBoxClassName }
+            passData={ this.state.park }
+          />
         </DisplayInfo>
       </div>
     );

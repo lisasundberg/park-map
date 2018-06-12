@@ -1,7 +1,13 @@
+html {
+  font-size: 14px;
+}
+body {
+  font-family: 'Circular Std';
+  overflow: hidden;
+}
 .App {
   text-align: center;
 }
-
 
 .App-header {
   background-color: #222;
@@ -15,16 +21,28 @@
   font-size: 1em;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+/***************************************/
+/*************** BUTTONS ***************/
+/***************************************/
+.close {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+.fa-window-close {
+  font-size: 2em;
 }
 
+/***************************************/
+/***************** MAP *****************/
+/***************************************/
 .map {
   height:93vh;
   width: 100%;
 }
-
 .pin {
   text-align: center;
   transform:translate(-10px, -40px);
@@ -37,43 +55,108 @@
 }
 
 
-.hidden, .info-box, .visible, .animate {
+/***************************************/
+/*************** INFOBOX ***************/
+/***************************************/
+
+.infoHeader, .info {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 1em;
+}
+
+.infoHeader {
+  h2 {
+    font-size: 3em;
+    margin: .5em 0;
+  }
+}
+.hidden, .infoBox, .visible, .animate {
   -webkit-transition: transform 500ms;
   transition: transform 500ms;
 }
 
-.hidden {
-  display: none!important;
-  transform: translateY(50vh);
-}
 .infoBox {
-  transform: translateY(50vh);
-}
-
-.visible {
-  display: flex;
-  justify-content: space-between;
   box-sizing: border-box;
   position: absolute;
   width: 100%;
-  height:50vh;
+  height:60vh;
   bottom: 0;
-  background: #333;
-  color:#f6f6f6;
-  padding: 2em;
-  transform: translateY(0);
+  background: lightgreen;
+  color:#333;
+  transform: translateY(60vh);
+}
+
+.visible {
+  transform: translateY(0) !important;
+}
+.hidden {
+  display: none !important;
 }
 
 
-/***************************************/
-/*************** BUTTONS ***************/
-/***************************************/
-.close {
-  background: none;
-  border: none;
-  outline: none;
-  color: #fff;
+
+/*** PARK FEATURES ***/
+.features {
+  li {
+    padding: 0 0 10px;
+  }
+  .true {
+    list-style: url("../images/checkmark.svg");
+  }
+  .false {
+    list-style: url("../images/cross.svg");
+  }
 }
-.fa-window-close {
-  font-size: 2em;
+.sunset {
+  padding: 2em 0;
+  small {
+    margin-left: 10px;
+  }
+  p {
+    font-size: 4em;
+    margin: 0;
+  }
+}
+
+.events {
+  .event {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    background: #fff;
+    margin:0 auto 10px;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.1);
+    .date-box {
+      text-align: left;
+      background: #333;
+      padding: 1em;
+      color: #fff;
+    }
+    .date {
+      font-size: 2em;
+    }
+    .month {
+      font-size: .7em;
+    }
+    .text {
+      padding: 1em 2em 1.2em 1em;
+    }
+
+    h4 {
+      font-size: 2em;
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.right {
+  display: flex;
+  align-items: flex-start;
 }
