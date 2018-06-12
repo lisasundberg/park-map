@@ -1,10 +1,13 @@
 import React from 'react';
 
 function InfoBox(props) {
-  console.log(props.passData);
+  function closeInfoBox(){
+    props.getDivStyle();
+  }
   return (
     <div className={`info-box ${props.className}`}>
       <h2>{ props.passData }</h2>
+      <button onClick={ closeInfoBox }>Close</button>
     </div>
   );
 }

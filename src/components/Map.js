@@ -24,15 +24,14 @@ class Map extends Component {
   };
 
   displayInfo = (event, park) => {
-    if (this.state.infoBoxClassName === 'hidden'){
-      this.setState({ infoBoxClassName: 'visible' });
-    } else {
-        this.setState({ infoBoxClassName: 'hidden' });
-    }
+    this.setState({ infoBoxClassName: 'visible' });
     this.setState({
       park: event.target.id
-    })
-    console.log(event.target.id);
+    });
+  }
+
+  closeInfoBox = () => {
+    this.setState({ infoBoxClassName: 'hidden' });
   }
 
   render() {
@@ -61,7 +60,7 @@ class Map extends Component {
           { places }
         </GoogleMapReact>
         <DisplayInfo element={ document.getElementById('modal') }>
-          <InfoBox className={ this.state.infoBoxClassName } passData={ this.state.park } />
+          <InfoBox getDivStyle={ this.closeInfoBox } className={ this.state.infoBoxClassName } passData={ this.state.park } />
         </DisplayInfo>
       </div>
     );
