@@ -6,19 +6,31 @@ html {
   font-size: 14px;
 }
 
-body {
-  overflow: hidden;
-}
 
 /***************************************/
 /*************** INFOBOX ***************/
 /***************************************/
 
 .infoBox {
-  height:60vh;
-  transform: translateY(60vh);
+  height:50vh;
+  transform: translateY(50vh);
 }
 
 .infoHeader, .info {
   flex-direction: row;
+}
+
+.left, .right {
+  width: 50%;
+}
+
+/***************************************/
+/*************** FILTER ****************/
+/***************************************/
+.searchInput {
+  z-index: 999;
+}
+.filterBox {
+  height: calc(50vh - 7vh);
+  width: 50%;
 }

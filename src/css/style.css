@@ -1,4 +1,7 @@
 @charset "UTF-8";
+ul {
+  list-style: none; }
+
 /***************************************/
 /************* TYPOGRAPHY **************/
 /***************************************/
@@ -8,12 +11,15 @@ html {
 body {
   font-family: 'Circular Std'; }
 
-.App {
-  text-align: center; }
+div {
+  box-sizing: border-box; }
 
 /***************************************/
 /*************** BUTTONS ***************/
 /***************************************/
+button {
+  cursor: pointer; }
+
 .close {
   background: none;
   border: none;
@@ -32,7 +38,9 @@ body {
   height: 7vh;
   padding: 10px;
   color: white;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between; }
 
 .App-title {
   font-size: 1em; }
@@ -62,21 +70,20 @@ ul {
 
 .infoHeader, .info {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   margin: auto;
   width: 100%;
   max-width: 1200px; }
 
 .infoHeader {
-  padding: 1em 5% 0; }
+  padding: 1em 5% 0;
+  flex-direction: row; }
   .infoHeader h2 {
     font-size: 3em;
     margin: .5em 0; }
 
-.hidden, .infoBox, .visible, .animate {
-  -webkit-transition: transform 500ms;
-  transition: transform 500ms; }
+.info {
+  flex-direction: column; }
 
 .infoBox {
   box-sizing: border-box;
@@ -86,15 +93,8 @@ ul {
   bottom: 0;
   background: lightgreen;
   color: #333;
-  transform: translateY(86vh);
   overflow: scroll;
-  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.2); }
-
-.visible {
-  transform: translateY(0) !important; }
-
-.hidden  {
-  display: none !important; }
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1); }
 
 .right, .left {
   padding: 0 5%; }
@@ -127,7 +127,6 @@ ul {
 .events .event {
   display: flex;
   justify-content: space-between;
-  list-style: none;
   background: #fff;
   margin: 0 auto 10px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1); }
@@ -143,10 +142,63 @@ ul {
   .events .event .text {
     padding: 1em 2em 1.2em 1em; }
   .events .event h4 {
-    font-size: 2em;
+    font-size: 1.4em;
     margin: 0; }
   .events .event p {
-    margin: 0; }
+    margin: 0;
+    font-size: .9em; }
+
+/***************************************/
+/**************** FILTER ***************/
+/***************************************/
+.searchInput  {
+  z-index: 999 !important; }
+
+.filterBox {
+  position: absolute;
+  padding: 1em;
+  height: auto;
+  width: 100%;
+  background: #333;
+  color: #f6f6f6;
+  right: 0;
+  z-index: 998;
+  overflow: scroll;
+  transform: translateY(-100vh); }
+  .filterBox .filterBoxes {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .filterBox .filterBoxes div {
+      width: 70px;
+      height: 70px;
+      background: #666;
+      margin: 5px;
+      display: inline-block;
+      cursor: pointer;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .filterBox .filterBoxes .active {
+      background: green; }
+
+/***************************************/
+/************* TRANSITIONS *************/
+/***************************************/
+.hidden, .infoBox, .visible, .animate, .filterBox {
+  -webkit-transition: transform 200ms;
+  transition: transform 300ms; }
+
+.infoBox {
+  transform: translateY(86vh); }
+
+.visible {
+  transform: translateY(0) !important; }
+
+.hidden  {
+  display: none !important; }
 
 @media screen and (min-width: 768px) {
   /***************************************/
@@ -154,13 +206,32 @@ ul {
   /***************************************/
   html {
     font-size: 14px; }
-  body {
-    overflow: hidden; }
   /***************************************/
   /*************** INFOBOX ***************/
   /***************************************/
   .infoBox {
-    height: 60vh;
-    transform: translateY(60vh); }
+    height: 50vh;
+    transform: translateY(50vh); }
   .infoHeader, .info {
-    flex-direction: row; } }
+    flex-direction: row; }
+  .left, .right {
+    width: 50%; }
+  /***************************************/
+  /*************** FILTER ****************/
+  /***************************************/
+  .searchInput {
+    z-index: 999; }
+  .filterBox {
+    height: calc(50vh - 7vh);
+    width: 50%; } }
+
+@media screen and (min-width: 992px) {
+  body {
+    overflow: hidden; }
+  .infoBox {
+    width: 75%; }
+  .searchInput {
+    z-index: 999; }
+  .filterBox {
+    height: 100vh;
+    width: 25%; } }
