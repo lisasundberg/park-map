@@ -62,7 +62,6 @@ class Map extends Component {
     const parks = this.props.greatPlaces
       .map(park => {
         const { id, lat, lng } = park;
-        const { swimming, bbq } = park.features;
         return (
           <Pin
             key={id}

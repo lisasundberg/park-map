@@ -11,7 +11,7 @@ function Event(){
         <h4>Parkteatern</h4>
         <p>Parkteatern gör en modern tolkning på Shakespeares klassiker Kung Lear</p>
       </div>
-      <img src="" className="event-image" />
+      <img src="" className="event-image" alt="" />
     </li>
   );
 }

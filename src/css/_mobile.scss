@@ -1,24 +1,14 @@
+/***************************************/
+/************* TYPOGRAPHY **************/
+/***************************************/
 html {
-  font-size: 14px;
+  font-size: 12px;
 }
 body {
   font-family: 'Circular Std';
-  overflow: hidden;
 }
 .App {
   text-align: center;
-}
-
-.App-header {
-  background-color: #222;
-  height: 7vh;
-  padding: 10px;
-  color: white;
-  box-sizing: border-box;
-}
-
-.App-title {
-  font-size: 1em;
 }
 
 
@@ -35,6 +25,23 @@ body {
 .fa-window-close {
   font-size: 2em;
 }
+
+
+/***************************************/
+/**************** HEADER ***************/
+/***************************************/
+.App-header {
+  background-color: #222;
+  height: 7vh;
+  padding: 10px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.App-title {
+  font-size: 1em;
+}
+
 
 /***************************************/
 /***************** MAP *****************/
@@ -58,9 +65,12 @@ body {
 /***************************************/
 /*************** INFOBOX ***************/
 /***************************************/
-
+ul {
+  -webkit-padding-start: 0!important;
+}
 .infoHeader, .info {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: auto;
   width: 100%;
@@ -83,13 +93,14 @@ body {
   box-sizing: border-box;
   position: absolute;
   width: 100%;
-  height:60vh;
+  height:86vh;
   bottom: 0;
   background: lightgreen;
   color:#333;
-  transform: translateY(60vh);
+  transform: translateY(86vh);
+  overflow: scroll;
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, .2);
 }
-
 .visible {
   transform: translateY(0) !important;
 }
@@ -97,7 +108,14 @@ body {
   display: none !important;
 }
 
+.right, .left {
+  // padding: 0 5%;
+}
 
+.right {
+  display: flex;
+  align-items: flex-start;
+}
 
 /*** PARK FEATURES ***/
 .features {
@@ -122,6 +140,9 @@ body {
   }
 }
 
+/***************************************/
+/**************** EVENTS ***************/
+/***************************************/
 .events {
   .event {
     display: flex;
@@ -154,9 +175,4 @@ body {
       margin: 0;
     }
   }
-}
-
-.right {
-  display: flex;
-  align-items: flex-start;
 }

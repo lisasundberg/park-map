@@ -1,23 +1,15 @@
 @charset "UTF-8";
+/***************************************/
+/************* TYPOGRAPHY **************/
+/***************************************/
 html {
-  font-size: 14px; }
+  font-size: 12px; }
 
 body {
-  font-family: 'Circular Std';
-  overflow: hidden; }
+  font-family: 'Circular Std'; }
 
 .App {
   text-align: center; }
-
-.App-header {
-  background-color: #222;
-  height: 7vh;
-  padding: 10px;
-  color: white;
-  box-sizing: border-box; }
-
-.App-title {
-  font-size: 1em; }
 
 /***************************************/
 /*************** BUTTONS ***************/
@@ -31,6 +23,19 @@ body {
 
 .fa-window-close {
   font-size: 2em; }
+
+/***************************************/
+/**************** HEADER ***************/
+/***************************************/
+.App-header {
+  background-color: #222;
+  height: 7vh;
+  padding: 10px;
+  color: white;
+  box-sizing: border-box; }
+
+.App-title {
+  font-size: 1em; }
 
 /***************************************/
 /***************** MAP *****************/
@@ -52,8 +57,12 @@ body {
 /***************************************/
 /*************** INFOBOX ***************/
 /***************************************/
+ul {
+  -webkit-padding-start: 0 !important; }
+
 .infoHeader, .info {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: auto;
   width: 100%;
@@ -73,17 +82,23 @@ body {
   box-sizing: border-box;
   position: absolute;
   width: 100%;
-  height: 60vh;
+  height: 86vh;
   bottom: 0;
   background: lightgreen;
   color: #333;
-  transform: translateY(60vh); }
+  transform: translateY(86vh);
+  overflow: scroll;
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.2); }
 
 .visible {
   transform: translateY(0) !important; }
 
 .hidden  {
   display: none !important; }
+
+.right {
+  display: flex;
+  align-items: flex-start; }
 
 /*** PARK FEATURES ***/
 .features li {
@@ -103,6 +118,9 @@ body {
     font-size: 4em;
     margin: 0; }
 
+/***************************************/
+/**************** EVENTS ***************/
+/***************************************/
 .events .event {
   display: flex;
   justify-content: space-between;
@@ -127,6 +145,19 @@ body {
   .events .event p {
     margin: 0; }
 
-.right {
-  display: flex;
-  align-items: flex-start; }
+@media screen and (min-width: 768px) {
+  /***************************************/
+  /************* TYPOGRAPHY **************/
+  /***************************************/
+  html {
+    font-size: 14px; }
+  body {
+    overflow: hidden; }
+  /***************************************/
+  /*************** INFOBOX ***************/
+  /***************************************/
+  .infoBox {
+    height: 60vh;
+    transform: translateY(60vh); }
+  .infoHeader, .info {
+    flex-direction: row; } }
