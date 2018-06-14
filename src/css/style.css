@@ -14,11 +14,18 @@ body {
 div {
   box-sizing: border-box; }
 
+a {
+  color: inherit;
+  text-decoration: none; }
+
 /***************************************/
 /*************** BUTTONS ***************/
 /***************************************/
 button {
-  cursor: pointer; }
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit; }
 
 .close {
   background: none;
@@ -29,6 +36,18 @@ button {
 
 .fa-window-close {
   font-size: 2em; }
+
+.okSearch {
+  background: white;
+  color: #333;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  width: auto;
+  height: 40px;
+  font-size: 1em;
+  margin: 20px; }
+
+.okSearch:hover {
+  background: lightgreen; }
 
 /***************************************/
 /**************** HEADER ***************/
@@ -164,7 +183,14 @@ ul {
   right: 0;
   z-index: 998;
   overflow: scroll;
-  transform: translateY(-100vh); }
+  transform: translateY(-100vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .filterBox .filterHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
   .filterBox .filterBoxes {
     width: 100%;
     display: flex;
@@ -200,6 +226,21 @@ ul {
 .hidden  {
   display: none !important; }
 
+button, .filterBoxes div {
+  transition: transform .1s ease; }
+
+button:hover, .filterBoxes div:hover {
+  transition: transform .1s ease-in-out;
+  transform: scale(1.04); }
+
+.event {
+  transition: transform .1s ease;
+  cursor: pointer; }
+
+.event:hover {
+  transition: transform .1s ease-in-out;
+  transform: scale(1.01); }
+
 @media screen and (min-width: 768px) {
   /***************************************/
   /************* TYPOGRAPHY **************/
@@ -233,5 +274,5 @@ ul {
   .searchInput {
     z-index: 999; }
   .filterBox {
-    height: 100vh;
+    height: calc(100vh - 7vh);
     width: 25%; } }

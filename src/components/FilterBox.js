@@ -11,12 +11,13 @@ function FilterBox(props){
 
   return (
     <div className={`filterBox ${props.className}`}>
-
-      <button onClick={ closeFilterBox } className="close">
-        <img src={ Cross } alt="Close"/>
-      </button>
-
-      <h4>Filter</h4>
+      <div>
+      <div className="filterHeader">
+        <h4>Filter</h4>
+        <button onClick={ closeFilterBox } className="close">
+          <img src={ Cross } alt="Close"/>
+        </button>
+      </div>
       <div className="filterBoxes">
         <FilterOption
           name="bbq"
@@ -45,8 +46,8 @@ function FilterBox(props){
         <FilterOption
           name="bad"
         />
-
       </div>
+    </div>
       <button onClick={ closeFilterBox } className="okSearch">
         Filter
       </button>

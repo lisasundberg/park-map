@@ -1,17 +1,20 @@
-import React from 'react';
+import React, {Component}  from 'react';
 import Sunset from './../images/sunset.svg';
 import Cross from './../images/cross.svg';
 import Event from './Event';
 
-function InfoBox(props) {
-  function closeInfoBox(){
-    props.getDivStyle();
+class InfoBox extends Component {
+  closeInfoBox = () => {
+    this.props.getDivStyle();
   }
+  render(){
+  const infoBox = this.refs;
+    console.log(infoBox);
   return (
-    <div className={`infoBox ${props.className}`}>
+    <div className={`infoBox ${this.props.className}`} ref={ infoBox => this.infoBox = infoBox }>
       <div className="infoHeader">
-        <h2>{ props.passData }</h2>
-        <button onClick={ closeInfoBox } className="close">
+        <h2>{ this.props.passData }</h2>
+        <button onClick={ this.closeInfoBox } className="close">
           <img src={ Cross } alt="Close"/>
         </button>
       </div>
@@ -43,6 +46,7 @@ function InfoBox(props) {
       </div>
     </div>
   );
+}
 }
 
 export default InfoBox;

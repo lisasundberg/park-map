@@ -12,6 +12,6 @@ body {
   z-index: 999;
 }
 .filterBox {
-  height: 100vh;
+  height: calc(100vh - 7vh);
   width: 25%;
 }

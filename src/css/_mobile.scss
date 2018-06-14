@@ -15,11 +15,19 @@ div {
   box-sizing: border-box;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /***************************************/
 /*************** BUTTONS ***************/
 /***************************************/
 button {
   cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
 }
 .close {
   background: none;
@@ -31,7 +39,18 @@ button {
 .fa-window-close {
   font-size: 2em;
 }
-
+.okSearch {
+  background: white;
+  color:#333;
+  box-shadow: 5px 5px 10px rgba(0,0,0,.1);
+  width: auto;
+  height: 40px;
+  font-size: 1em;
+  margin: 20px;
+}
+.okSearch:hover {
+  background: lightgreen;
+}
 
 /***************************************/
 /**************** HEADER ***************/
@@ -95,7 +114,6 @@ ul {
 .info {
   flex-direction: column;
 }
-
 
 
 .infoBox {
@@ -196,6 +214,15 @@ ul {
   z-index: 998;
   overflow: scroll;
   transform:translateY(-100vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .filterHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
   .filterBoxes {
     width: 100%;
@@ -236,4 +263,22 @@ ul {
 }
 .hidden {
   display: none !important;
+}
+
+button, .filterBoxes div {
+  transition: transform .1s ease;
+}
+
+button:hover, .filterBoxes div:hover {
+  transition: transform .1s ease-in-out;
+  transform: scale(1.04);
+}
+
+.event {
+  transition: transform .1s ease;
+  cursor: pointer;
+}
+.event:hover {
+  transition: transform .1s ease-in-out;
+  transform: scale(1.01);
 }

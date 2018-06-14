@@ -5,7 +5,7 @@ class FilterOption extends Component {
     activated: 'inactive'
   }
 activateFilter = () => {
-  console.log(this.ref.infoBoxRef);
+  // console.log(this.refs.infoBox);
   if(this.state.activated === 'active') {
     this.setState({activated: 'inactive'})
   } else {
