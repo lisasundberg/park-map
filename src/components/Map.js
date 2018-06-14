@@ -33,9 +33,9 @@ class Map extends Component {
           bbq: true
         }
       },
-      { id: 'Gröndalsparken',
-        lat: 59.314,
-        lng: 18.0,
+      { id: 'Rålambshovsparken',
+        lat: 59.328110,
+        lng: 18.025942,
         features: {
           swimming: false,
           bbq: true

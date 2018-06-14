@@ -57,12 +57,13 @@ body {
   justify-content: space-between;
   margin: auto;
   width: 100%;
-  max-width: 1200px;
-  padding: 1em; }
+  max-width: 1200px; }
 
-.infoHeader h2 {
-  font-size: 3em;
-  margin: .5em 0; }
+.infoHeader {
+  padding: 1em 0 0; }
+  .infoHeader h2 {
+    font-size: 3em;
+    margin: .5em 0; }
 
 .hidden, .infoBox, .visible, .animate {
   -webkit-transition: transform 500ms;
