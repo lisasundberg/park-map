@@ -36,7 +36,7 @@ function InfoBox(props) {
               <Event />
               <Event />
               <Event />
-              <button className="show-more">Visa mer...</button>
+              {/* <button className="show-more">Visa mer...</button> */}
             </ul>
           </div>
         </div>

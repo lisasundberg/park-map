@@ -81,6 +81,7 @@ class Map extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}>
           { parks }
+
         </GoogleMapReact>
         <DisplayInfo element={ document.getElementById('modal') }>
           <InfoBox
