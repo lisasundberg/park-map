@@ -69,7 +69,7 @@ ul {
   max-width: 1200px; }
 
 .infoHeader {
-  padding: 1em 0 0; }
+  padding: 1em 5% 0; }
   .infoHeader h2 {
     font-size: 3em;
     margin: .5em 0; }
@@ -95,6 +95,9 @@ ul {
 
 .hidden  {
   display: none !important; }
+
+.right, .left {
+  padding: 0 5%; }
 
 .right {
   display: flex;
