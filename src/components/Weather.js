@@ -1,11 +1,12 @@
 import React from 'react';
 import Sunset from './../images/sunset.svg';
+import Sunny from './../images/sunny.svg';
 
 function Weather(){
 return (
-  <div className="weatherContainer flex row">
+  <div className="weatherContainer flex row vCenter spaceBetween">
     <div className="weather">
-      <p>Sol</p>
+      <div><img src={ Sunny } alt="Sunny" className="sunny" /></div>
       <p>23´c</p>
     </div>
     <div className="sunset">

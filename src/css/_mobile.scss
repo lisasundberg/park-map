@@ -170,6 +170,13 @@ ul {
   align-items: flex-start;
 }
 
+hr {
+  width: 160px;
+  height: 1px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  margin: 30px auto;
+}
+
 /*** PARK FEATURES ***/
 .features {
   li {
@@ -191,6 +198,14 @@ ul {
     font-size: 4em;
     margin: 0;
   }
+}
+
+/***************************************/
+/**************** WEATHER **************/
+/***************************************/
+.sunny {
+  width: 70px;
+  height: 70px;
 }
 
 /***************************************/
@@ -295,6 +310,10 @@ ul {
     font-size: .9em;
     margin: 0 6px 5px 0;
     transition: ease 1s;
+    &:after {
+      content: url(../images/cross-dark.svg);
+      margin-left: 5px;
+    }
   }
 
 /***************************************/
@@ -302,7 +321,7 @@ ul {
 /***************************************/
 
 .instagramContainer{
-  padding: 5%;
+  padding: 0 5% 5%;
   .instagramFeed {
     width: 100%;
     display: flex;

@@ -35,6 +35,7 @@ class InfoBox extends Component {
           <Events />
         </div>
       </div>
+      <hr />
       <InstagramFeed />
     </div>
   );

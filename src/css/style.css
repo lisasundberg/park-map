@@ -70,6 +70,15 @@ input[type=text]  {
 .row  {
   flex-direction: row; }
 
+.alignCenter {
+  align-items: center; }
+
+.vCenter {
+  align-items: center; }
+
+.spaceBetween {
+  justify-content: space-between; }
+
 /***************************************/
 /**************** HEADER ***************/
 /***************************************/
@@ -143,6 +152,12 @@ ul {
   display: flex;
   align-items: flex-start; }
 
+hr {
+  width: 160px;
+  height: 1px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  margin: 30px auto; }
+
 /*** PARK FEATURES ***/
 .features li {
   padding: 0 0 10px; }
@@ -160,6 +175,13 @@ ul {
   .sunset p {
     font-size: 4em;
     margin: 0; }
+
+/***************************************/
+/**************** WEATHER **************/
+/***************************************/
+.sunny {
+  width: 70px;
+  height: 70px; }
 
 /***************************************/
 /**************** EVENTS ***************/
@@ -246,12 +268,15 @@ ul {
   font-size: .9em;
   margin: 0 6px 5px 0;
   transition: ease 1s; }
+  .filterItem:after {
+    content: url(../images/cross-dark.svg);
+    margin-left: 5px; }
 
 /***************************************/
 /*********** INSTAGRAM FEED ************/
 /***************************************/
 .instagramContainer {
-  padding: 5%; }
+  padding: 0 5% 5%; }
   .instagramContainer .instagramFeed {
     width: 100%;
     display: flex;

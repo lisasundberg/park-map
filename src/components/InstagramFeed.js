@@ -28,7 +28,7 @@ class InstagramFeed extends Component {
         <div className="instagramFeed">
             {
               images.map(function(image, index){
-                return <div className="imageContainer" key={ index }><img src={ image } alt="Instagram image" /></div>;
+                return <div className="imageContainer" key={ index }><img src={ image } alt="Instagram" /></div>;
               })
             }
         </div>

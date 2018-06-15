@@ -2,7 +2,7 @@ import React from 'react';
 
 function Event(){
   return(
-    <a href="http://kulturhusetstadsteatern.se/parkteatern/" target="_blank">
+    <a href="http://kulturhusetstadsteatern.se/parkteatern/" target="_blank" rel="noopener noreferrer">
       <li className="event">
         <div className="date-box">
           <p className="date">11</p>
