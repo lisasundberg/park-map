@@ -1,59 +1,90 @@
-
-
-import React from 'react';
+import React, {Component} from 'react';
 import Cross from './../images/cross.svg';
 import FilterOption from './FilterOption';
 
-function FilterBox(props){
-  function closeFilterBox(){
-    props.getDivStyle();
+class FilterBox extends Component {
+
+  state = {
+    choosenFilters: []
   }
 
+ closeFilterBox = () => {
+    this.props.getDivStyle();
+  }
+
+  getFilterValue = (lol) => {
+    let array = this.state.choosenFilters;
+    array.push(lol);
+    this.setState({
+      choosenFilters: array
+    });
+  }
+
+render(){
+  console.log(document.getElementById('filterOutputBox'))
   return (
-    <div className={`filterBox ${props.className}`}>
+    <div className={`filterBox ${this.props.className}`}>
       <div>
       <div className="filterHeader">
         <h4>Filter</h4>
-        <button onClick={ closeFilterBox } className="close">
+        <button onClick={ this.closeFilterBox } className="close">
           <img src={ Cross } alt="Close"/>
         </button>
       </div>
       <div className="filterBoxes">
         <FilterOption
           name="bbq"
+          addFilter={this.getFilterValue}
         />
         <FilterOption
           name="swim"
+          addFilter={this.getFilterValue}
         />
         <FilterOption
           name="gym"
+          addFilter={this.getFilterValue}
         />
         <FilterOption
           name="booze"
+          addFilter={this.getFilterValue}
         />
         <FilterOption
           name="bad"
+          addFilter={this.getFilterValue}
         />
         <FilterOption
           name="bad"
+          addFilter={this.getFilterValue}
         />
         <FilterOption
           name="bad"
+          addFilter={this.getFilterValue}
         />
         <FilterOption
           name="bad"
+          addFilter={this.getFilterValue}
         />
         <FilterOption
           name="bad"
+          addFilter={this.getFilterValue}
         />
       </div>
     </div>
-      <button onClick={ closeFilterBox } className="okSearch">
+      <button onClick={ this.closeFilterBox } className="okSearch">
         Filter
       </button>
+      <div>
+      {
+        // this.state.choosenFilters.map(function(filter, index){
+        //   return <p key={index}> {filter} </p>;
+        // })
+        this.state.choosenFilters
+      }
+    </div>
     </div>
 
   )
+}
 }
 
 export default FilterBox;

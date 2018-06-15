@@ -12,8 +12,8 @@ html {
 /***************************************/
 
 .infoBox {
-  height:50vh;
-  transform: translateY(50vh);
+  height:70vh;
+  transform: translateY(70vh);
 }
 
 .infoHeader, .info {
@@ -31,6 +31,6 @@ html {
   z-index: 999;
 }
 .filterBox {
-  height: calc(50vh - 7vh);
+  height: calc(30vh - 7vh);
   width: 50%;
 }

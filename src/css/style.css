@@ -50,6 +50,15 @@ button {
   background: lightgreen; }
 
 /***************************************/
+/**************** FLEX *****************/
+/***************************************/
+.flex {
+  display: flex; }
+
+.row  {
+  flex-direction: row; }
+
+/***************************************/
 /**************** HEADER ***************/
 /***************************************/
 .App-header {
@@ -85,7 +94,7 @@ button {
 /*************** INFOBOX ***************/
 /***************************************/
 ul {
-  -webkit-padding-start: 0 !important; }
+  -webkit-padding-start: 0; }
 
 .infoHeader, .info {
   display: flex;
@@ -211,6 +220,23 @@ ul {
       background: green; }
 
 /***************************************/
+/*********** INSTAGRAM FEED ************/
+/***************************************/
+.instagramContainer {
+  padding: 5%; }
+  .instagramContainer .instagramFeed {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+
+.imageContainer {
+  width: calc(25% - 6px);
+  margin: 1px 3px; }
+  .imageContainer img {
+    width: 100%; }
+
+/***************************************/
 /************* TRANSITIONS *************/
 /***************************************/
 .hidden, .infoBox, .visible, .animate, .filterBox {
@@ -226,10 +252,10 @@ ul {
 .hidden  {
   display: none !important; }
 
-button, .filterBoxes div {
+.filterBoxes div {
   transition: transform .1s ease; }
 
-button:hover, .filterBoxes div:hover {
+.filterBoxes div:hover {
   transition: transform .1s ease-in-out;
   transform: scale(1.04); }
 
@@ -251,8 +277,8 @@ button:hover, .filterBoxes div:hover {
   /*************** INFOBOX ***************/
   /***************************************/
   .infoBox {
-    height: 50vh;
-    transform: translateY(50vh); }
+    height: 70vh;
+    transform: translateY(70vh); }
   .infoHeader, .info {
     flex-direction: row; }
   .left, .right {
@@ -263,7 +289,7 @@ button:hover, .filterBoxes div:hover {
   .searchInput {
     z-index: 999; }
   .filterBox {
-    height: calc(50vh - 7vh);
+    height: calc(30vh - 7vh);
     width: 50%; } }
 
 @media screen and (min-width: 992px) {
