@@ -53,6 +53,16 @@ button {
 }
 
 /***************************************/
+/**************** FLEX *****************/
+/***************************************/
+.flex {
+  display: flex;
+}
+.row {
+  flex-direction: row;
+}
+
+/***************************************/
 /**************** HEADER ***************/
 /***************************************/
 .App-header {
@@ -93,7 +103,7 @@ button {
 /*************** INFOBOX ***************/
 /***************************************/
 ul {
-  -webkit-padding-start: 0!important;
+  -webkit-padding-start: 0;
 }
 .infoHeader, .info {
   display: flex;
@@ -247,6 +257,27 @@ ul {
     }
   }
 
+/***************************************/
+/*********** INSTAGRAM FEED ************/
+/***************************************/
+
+.instagramContainer{
+  padding: 5%;
+  .instagramFeed {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.imageContainer {
+  width: calc(25% - 6px);
+  margin: 1px 3px;
+  img {
+    width: 100%;
+  }
+}
 
 /***************************************/
 /************* TRANSITIONS *************/
@@ -265,11 +296,11 @@ ul {
   display: none !important;
 }
 
-button, .filterBoxes div {
+.filterBoxes div {
   transition: transform .1s ease;
 }
 
-button:hover, .filterBoxes div:hover {
+.filterBoxes div:hover {
   transition: transform .1s ease-in-out;
   transform: scale(1.04);
 }
@@ -281,4 +312,11 @@ button:hover, .filterBoxes div:hover {
 .event:hover {
   transition: transform .1s ease-in-out;
   transform: scale(1.01);
+}
+
+button {
+
+}
+button:hover {
+
 }
