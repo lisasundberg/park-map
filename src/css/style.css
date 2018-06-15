@@ -50,6 +50,18 @@ button {
   background: lightgreen; }
 
 /***************************************/
+/*************** BUTTONS ***************/
+/***************************************/
+input[type=text]  {
+  font-size: 2rem;
+  font-family: inherit !important;
+  text-indent: 8px;
+  outline: none;
+  border: none; }
+  input[type=text] :focus {
+    outline: none; }
+
+/***************************************/
 /**************** FLEX *****************/
 /***************************************/
 .flex {
@@ -180,7 +192,8 @@ ul {
 /**************** FILTER ***************/
 /***************************************/
 .searchInput  {
-  z-index: 999 !important; }
+  z-index: 999 !important;
+  width: 100%; }
 
 .filterBox {
   position: absolute;
@@ -218,6 +231,21 @@ ul {
       align-items: center; }
     .filterBox .filterBoxes .active {
       background: green; }
+
+.chosenFilters {
+  position: absolute;
+  top: 16px;
+  z-index: 9999; }
+
+.filterItem {
+  padding: 4px 12px;
+  display: inline-block;
+  background: lightblue;
+  color: #333;
+  border-radius: 12px;
+  font-size: .9em;
+  margin: 0 6px 5px 0;
+  transition: ease 1s; }
 
 /***************************************/
 /*********** INSTAGRAM FEED ************/
@@ -287,10 +315,13 @@ ul {
   /*************** FILTER ****************/
   /***************************************/
   .searchInput {
-    z-index: 999; }
+    z-index: 999;
+    width: 23vw; }
   .filterBox {
     height: calc(30vh - 7vh);
-    width: 50%; } }
+    width: 50%; }
+  .chosenFilters {
+    right: 26vw; } }
 
 @media screen and (min-width: 992px) {
   body {

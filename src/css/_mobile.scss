@@ -53,6 +53,20 @@ button {
 }
 
 /***************************************/
+/*************** BUTTONS ***************/
+/***************************************/
+input[type=text] {
+  font-size: 2rem;
+  font-family: inherit!important;
+  text-indent: 8px;
+  outline: none;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+/***************************************/
 /**************** FLEX *****************/
 /***************************************/
 .flex {
@@ -212,6 +226,7 @@ ul {
 /***************************************/
 .searchInput {
   z-index:999!important;
+  width: 100%;
 }
 .filterBox {
   position: absolute;
@@ -255,6 +270,22 @@ ul {
         background: green;
       }
     }
+  }
+
+  .chosenFilters {
+    position: absolute;
+    top:16px;
+    z-index: 9999;
+  }
+  .filterItem {
+    padding: 4px 12px;
+    display: inline-block;
+    background: lightblue;
+    color: #333;
+    border-radius: 12px;
+    font-size: .9em;
+    margin: 0 6px 5px 0;
+    transition: ease 1s;
   }
 
 /***************************************/

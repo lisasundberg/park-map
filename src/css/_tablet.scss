@@ -29,8 +29,13 @@ html {
 /***************************************/
 .searchInput {
   z-index: 999;
+  width: 23vw;
 }
 .filterBox {
   height: calc(30vh - 7vh);
   width: 50%;
+}
+
+.chosenFilters {
+  right: 26vw;
 }
