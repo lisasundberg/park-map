@@ -1,7 +1,7 @@
 import React, {Component}  from 'react';
-import Sunset from './../images/sunset.svg';
+
 import Cross from './../images/cross.svg';
-import Event from './Event';
+import Weather from './Weather';
 import Events from './Events';
 import InstagramFeed from './InstagramFeed';
 
@@ -29,21 +29,9 @@ class InfoBox extends Component {
               <li className="false">Alkohol</li>
               <li className="true">Aktiviteter: minigolf</li>
             </ul>
-            <div className="sunset">
-              <img src={ Sunset } alt="Solen går ner"/>
-              <small>Solen går ner</small>
-              <p>23:30</p>
-            </div>
+            <Weather />
         </div>
         <div className="right">
-          <div className="events">
-            <ul>
-              <Event />
-              <Event />
-              <Event />
-              {/* <button className="show-more">Visa mer...</button> */}
-            </ul>
-          </div>
           <Events />
         </div>
       </div>
