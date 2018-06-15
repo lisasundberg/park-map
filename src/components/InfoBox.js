@@ -2,6 +2,7 @@ import React, {Component}  from 'react';
 import Sunset from './../images/sunset.svg';
 import Cross from './../images/cross.svg';
 import Event from './Event';
+import Events from './Events';
 import InstagramFeed from './InstagramFeed';
 
 class InfoBox extends Component {
@@ -43,6 +44,7 @@ class InfoBox extends Component {
               {/* <button className="show-more">Visa mer...</button> */}
             </ul>
           </div>
+          <Events />
         </div>
       </div>
       <InstagramFeed />
