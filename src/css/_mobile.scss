@@ -75,6 +75,15 @@ input[type=text] {
 .row {
   flex-direction: row;
 }
+.alignCenter {
+  align-items: center;
+}
+.vCenter{
+  align-items: center;
+}
+.spaceBetween {
+  justify-content: space-between;
+}
 
 /***************************************/
 /**************** HEADER ***************/
