@@ -269,6 +269,9 @@ hr {
   position: absolute;
   top: 16px;
   z-index: 9999; }
+  .chosenFilters .cross {
+    padding-left: 5px;
+    cursor: pointer; }
 
 .filterItem {
   padding: 4px 12px;
@@ -279,9 +282,19 @@ hr {
   font-size: .9em;
   margin: 0 6px 5px 0;
   transition: ease 1s; }
-  .filterItem:after {
-    content: url(../images/cross-dark.svg);
-    margin-left: 5px; }
+
+.searchSuggestion {
+  background: #f6f6f6;
+  padding: 7px;
+  margin-bottom: 7px;
+  box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.1);
+  cursor: pointer; }
+  .searchSuggestion h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: #333; }
+  .searchSuggestion small.features {
+    color: rgba(0, 0, 0, 0.4); }
 
 /***************************************/
 /*********** INSTAGRAM FEED ************/
@@ -323,13 +336,18 @@ hr {
   transition: transform .1s ease-in-out;
   transform: scale(1.04); }
 
-.event {
+.event, .searchSuggestion {
   transition: transform .1s ease;
   cursor: pointer; }
 
-.event:hover {
+.event:hover, .searchSuggestion:hoverm {
   transition: transform .1s ease-in-out;
   transform: scale(1.01); }
+
+.searchSuggestion span {
+  font-style: italic;
+  font-weight: 400;
+  color: #636363; }
 
 @media screen and (min-width: 768px) {
   /***************************************/
