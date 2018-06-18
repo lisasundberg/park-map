@@ -1,6 +1,6 @@
 import React, {Component}  from 'react';
 
-import Cross from './../images/cross.svg';
+import Cross from './../images/cross-dark-large.svg';
 import Weather from './Weather';
 import Events from './Events';
 import InstagramFeed from './InstagramFeed';

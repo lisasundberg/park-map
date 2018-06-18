@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Cross from './../images/cross.svg';
+import Cross from './../images/cross-white.svg';
 import FilterOption from './FilterOption';
 
 class FilterBox extends Component {

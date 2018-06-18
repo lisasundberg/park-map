@@ -32,8 +32,9 @@ html {
   width: 23vw;
 }
 .filterBox {
-  height: calc(30vh - 7vh);
-  width: 50%;
+  // height: calc(30vh - 7vh);
+  height: auto;
+  width: 33%;
 }
 
 .chosenFilters {

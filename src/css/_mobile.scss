@@ -53,8 +53,16 @@ button {
 }
 
 /***************************************/
-/*************** BUTTONS ***************/
+/*************** INPUTS ****************/
 /***************************************/
+input {
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  text-indent: 8px;
+  font-family: inherit;
+  font-size: 1em;
+}
 input[type=text] {
   font-size: 2rem;
   font-family: inherit!important;
@@ -186,7 +194,7 @@ hr {
     list-style: url("../images/checkmark.svg");
   }
   .false {
-    list-style: url("../images/cross.svg");
+    list-style: url("../images/cross-dark-large.svg");
   }
 }
 .sunset {
@@ -266,7 +274,7 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  box-shadow: -5px 5px 30px rgba(0,0,0,.3);
   .filterHeader {
     display: flex;
     flex-direction: row;
@@ -275,11 +283,16 @@ hr {
 
   .filterBoxes {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: stretch;
     div {
-        width: 70px;
+        // width: 70px;
         height: 70px;
         background: #666;
         margin: 5px;
@@ -291,7 +304,8 @@ hr {
         align-items: center;
       }
       .active{
-        background: green;
+        background: lightgreen;
+        color:#333;
       }
     }
   }
