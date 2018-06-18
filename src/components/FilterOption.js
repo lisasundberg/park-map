@@ -4,15 +4,14 @@ class FilterOption extends Component {
   state = {
     activated: 'inactive'
   }
-activateFilter = () => {
-  this.props.addFilter(this.props.name)
-  console.log(this.props.name)
+toggleFilter = () => {
   // console.log(this.refs.infoBox);
   if(this.state.activated === 'active') {
-    this.setState({activated: 'inactive'})
+    this.setState({activated: 'inactive'});
+    this.props.removeFilter(this.props.name);
   } else {
-      this.setState({activated: 'active'})
-
+      this.setState({activated: 'active'});
+      this.props.addFilter(this.props.name);
   }
 }
 
@@ -22,7 +21,7 @@ filterOptionValue = () => {
   render() {
     return(
       <div
-        onClick={this.activateFilter}
+        onClick={this.toggleFilter}
         className={this.state.activated}
         >
 
