@@ -2,29 +2,27 @@ import React, {Component} from 'react';
 
 class FilterOption extends Component {
   state = {
-    activated: 'inactive'
+    filterOptionState: ''
   }
 toggleFilter = () => {
   // console.log(this.refs.infoBox);
-  if(this.state.activated === 'active') {
-    this.setState({activated: 'inactive'});
+  if(this.state.filterOptionState === 'active') {
+    this.setState({filterOptionState: 'inactive'});
     this.props.removeFilter(this.props.name);
   } else {
-      this.setState({activated: 'active'});
+      this.setState({filterOptionState: 'active'});
       this.props.addFilter(this.props.name);
   }
 }
-
-filterOptionValue = () => {
-
-}
+// filterOptionValue = (this.props.className) => {
+//
+// }
   render() {
     return(
       <div
         onClick={this.toggleFilter}
-        className={this.state.activated}
+        className={this.state.filterOptionState}
         >
-
           {this.props.name}
         </div>
     )

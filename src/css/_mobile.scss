@@ -15,6 +15,10 @@ div {
   box-sizing: border-box;
 }
 
+h4 {
+  margin: 0 0 10px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -83,6 +87,9 @@ input[type=text] {
 .row {
   flex-direction: row;
 }
+.column {
+  flex-direction: column;
+}
 .alignCenter {
   align-items: center;
 }
@@ -91,6 +98,10 @@ input[type=text] {
 }
 .spaceBetween {
   justify-content: space-between;
+}
+
+.grid {
+  display: grid;
 }
 
 /***************************************/
@@ -211,6 +222,11 @@ hr {
 /***************************************/
 /**************** WEATHER **************/
 /***************************************/
+.weather {
+  margin-right: 60px;
+  text-align: center;
+  padding-top: 20px;
+}
 .sunny {
   width: 70px;
   height: 70px;
@@ -260,42 +276,64 @@ hr {
   z-index:999!important;
   width: 100%;
 }
+
+.searchSuggestions {
+  margin-bottom:40px;
+  span {
+    font-style: italic;
+    font-weight: 300;
+    opacity: .4;
+  }
+}
+.searchSuggestion {
+  background: #fff;
+  color:#333;
+  padding: 7px;
+  margin-bottom: 10px;
+  box-shadow: 3px 3px 13px rgba(0,0,0,.1);
+  cursor: pointer;
+  h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+  }
+  small.features {
+    opacity: .6;
+  }
+}
+
 .filterBox {
   position: absolute;
-  padding: 1em;
+  padding: 1.5rem;
   height: auto;
   width: 100%;
-  background: #333;
-  color: #f6f6f6;
+  background: #f6f6f6;
+  color: #333;
   right: 0;
   z-index: 998;
   overflow: scroll;
   transform:translateY(-100vh);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   box-shadow: -5px 5px 30px rgba(0,0,0,.3);
-  .filterHeader {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
 
+  h4 {
+    letter-spacing: 0.01rem;
+    font-size: .8rem;
+    font-weight: 400;
+  }
   .filterBoxes {
     width: 100%;
     // display: flex;
     // flex-direction: row;
     // flex-wrap: wrap;
-    display: grid;
-    grid-gap: 3px;
+    grid-gap: 10px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     align-items: stretch;
+
     div {
         // width: 70px;
         height: 70px;
         background: #666;
-        margin: 5px;
         display: inline-block;
         cursor: pointer;
         text-align: center;
@@ -334,21 +372,7 @@ hr {
     // }
   }
 
-  .searchSuggestion {
-    background: #f6f6f6;
-    padding: 7px;
-    margin-bottom: 7px;
-    box-shadow: 3px 3px 13px rgba(0,0,0,.1);
-    cursor: pointer;
-    h3 {
-      font-size: 1rem;
-      margin: 0;
-      color:#333;
-    }
-    small.features {
-        color: rgba(0,0,0,.4);
-    }
-  }
+
 
 /***************************************/
 /*********** INSTAGRAM FEED ************/
@@ -382,6 +406,7 @@ hr {
 .infoBox {
   transform: translateY(86vh);
 }
+
 .visible {
   transform: translateY(0) !important;
 }
@@ -402,20 +427,47 @@ hr {
   transition: transform .1s ease;
   cursor: pointer;
 }
-.event:hover, .searchSuggestion:hoverm{
+.event:hover, .searchSuggestion:hover {
   transition: transform .1s ease-in-out;
   transform: scale(1.01);
 }
 
-.searchSuggestion span {
-  font-style: italic;
-  font-weight: 400;
-  color: #636363;
+
+@keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity:1;
+      transform: translateY(0px);
+    }
+}
+.searchSuggestion, .info {
+  animation-name: animateIn;
+  animation-duration: 1s;
 }
 
-button {
-
+@keyframes popIn{
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
-button:hover {
-
+.filterItem {
+  animation-name: popIn;
+  animation-duration: .2s;
 }
+
+
+// @for $i from 3 through 1 {
+//   .searchSuggestion {
+//     &:nth-child(#{$i}){
+//       animation-name: animateIn;
+//       animation-duration: 10s;
+//       animation-delay: 0 + (42ms * $i);
+//     }
+//   }
+// }

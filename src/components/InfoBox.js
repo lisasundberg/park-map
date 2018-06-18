@@ -11,7 +11,7 @@ class InfoBox extends Component {
   }
   render(){
   const infoBox = this.refs;
-    console.log(infoBox);
+  
   return (
     <div className={`infoBox ${this.props.className}`} ref={ infoBox => this.infoBox = infoBox }>
       <div className="infoHeader">

@@ -8,7 +8,8 @@ import './../css/style.css';
 class App extends Component {
 
   state = {
-    filterBoxClassName: ''
+    filterBoxClassName: '',
+    searchSuggestionsVisible: false
   }
 
   openFilter = () => {
@@ -24,14 +25,21 @@ class App extends Component {
     }, 500);
   }
 
+  showSearchSuggestions = () => {
+    this.setState({
+      searchSuggestionsVisible: true
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <Header onClick={ this.openFilter } />
+        <Header onFocus={ this.openFilter } onChange={ this.showSearchSuggestions } />
 
         <FilterBox
           getDivStyle={ this.closeFilterBox }
-          className={ this.state.filterBoxClassName } />
+          className={ this.state.filterBoxClassName }
+          visibility={this.state.searchSuggestionsVisible} />
         <Map />
       </div>
     );

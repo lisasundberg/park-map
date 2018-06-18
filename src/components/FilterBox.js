@@ -7,7 +7,9 @@ import SearchSuggestion from './SearchSuggestion';
 class FilterBox extends Component {
 
   state = {
-    chosenFilters: []
+    chosenFilters: [],
+    // filterOptionState: 'inactive'
+    visibility: false
   }
 
  closeFilterBox = () => {
@@ -44,6 +46,7 @@ class FilterBox extends Component {
     });
   }
 
+
 render(){
   return (
     <div>
@@ -59,76 +62,91 @@ render(){
           );
         })}
       </div>
-    <div className={`filterBox ${this.props.className}`}>
-      <div className="searchSuggestions">
-        <SearchSuggestion
-          parkName="Vitabergsparken"
-          parkSmekName="Vitan, Vitabergen"
-          features="Grill, Alkoholtillstånd, Utsikt"
-        />
-        <SearchSuggestion
-          parkName="Tantolunden"
-          parkSmekName="Tanto"
-          features="Bad, Grill, Minigolf, Alkoholtillstånd"
-        />
-        <SearchSuggestion
-          parkName="Rålambshovsparken"
-          parkSmekName="Rålis, Rållan"
-          features="Bad, Grill, Boule"
-        />
+    <div className={`flex column filterBox ${this.props.className}`}>
+      <div className="flex spaceBetween">
+        <div></div>
+        <button onClick={ this.closeFilterBox } className="close">
+          <img src={ CrossWhite } alt="Close"/>
+        </button>
       </div>
+      { this.props.visibility &&
+        <div className="searchSuggestions">
+          <h4>Sökförslag</h4>
+            <SearchSuggestion
+            parkName="Vitabergsparken"
+            parkSmekName="Vitan, Vitabergen"
+            features="Grill, Alkoholtillstånd, Utsikt"
+          />
+          <SearchSuggestion
+            parkName="Tantolunden"
+            parkSmekName="Tanto"
+            features="Bad, Grill, Minigolf, Alkoholtillstånd"
+          />
+          <SearchSuggestion
+            parkName="Rålambshovsparken"
+            parkSmekName="Rålis, Rållan"
+            features="Bad, Grill, Boule"
+          />
+        </div>}
+
       <div>
         <div className="filterHeader">
-          <h4>Filter</h4>
-          <button onClick={ this.closeFilterBox } className="close">
-            <img src={ CrossWhite } alt="Close"/>
-          </button>
+          <h4>Filtrera</h4>
         </div>
-        <div className="filterBoxes">
+        <div className="filterBoxes grid">
           <FilterOption
             name="bbq"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
+            // className={this.state.filterOptionState}
           />
           <FilterOption
             name="swim"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
+            // className={ this.state.filterOptionState }
           />
           <FilterOption
             name="gym"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
+            // className={ this.state.filterOptionState }
           />
           <FilterOption
             name="booze"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
+            // className={ this.state.filterOptionState }
           />
           <FilterOption
             name="bad"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
+            // className={ this.state.filterOptionState }
           />
           <FilterOption
             name="bad"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
+            // className={ this.state.filterOptionState }
           />
           <FilterOption
             name="bad"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
+            // className={ this.state.filterOptionState }
           />
           <FilterOption
             name="bad"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
+            // className={ this.state.filterOptionState }
           />
           <FilterOption
             name="bad"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
+            // className={ this.state.filterOptionState }
           />
         </div>
       </div>
