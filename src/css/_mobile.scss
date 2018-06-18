@@ -1,4 +1,12 @@
 
+/***************************************/
+/************** VARIABLES **************/
+/***************************************/
+$box-shadow__small: 3px 3px 10px rgba(0,0,0,.1);
+$box-shadow__large: -5px 5px 30px rgba(0,0,0,.1);
+
+
+
 ul {
   list-style: none;
 }
@@ -44,9 +52,9 @@ button {
   font-size: 2em;
 }
 .okSearch {
-  background: white;
+  background: lightblue;
   color:#333;
-  box-shadow: 5px 5px 10px rgba(0,0,0,.1);
+  box-shadow: $box-shadow__small;
   width: auto;
   height: 40px;
   font-size: 1em;
@@ -241,7 +249,7 @@ hr {
     justify-content: space-between;
     background: #fff;
     margin:0 auto 10px;
-    box-shadow: 10px 10px 20px rgba(0,0,0,.1);
+    box-shadow: $box-shadow__small;
     .date-box {
       text-align: left;
       background: #333;
@@ -290,7 +298,7 @@ hr {
   color:#333;
   padding: 7px;
   margin-bottom: 10px;
-  box-shadow: 3px 3px 13px rgba(0,0,0,.1);
+  box-shadow: $box-shadow__small;
   cursor: pointer;
   h3 {
     font-size: 1rem;
@@ -313,7 +321,7 @@ hr {
   z-index: 998;
   overflow: scroll;
   transform:translateY(-100vh);
-  box-shadow: -5px 5px 30px rgba(0,0,0,.3);
+  box-shadow: $box-shadow__large;
 
   h4 {
     letter-spacing: 0.01rem;
@@ -340,6 +348,7 @@ hr {
         display: flex;
         justify-content: center;
         align-items: center;
+        box-shadow: $box-shadow__small;
       }
       .active{
         background: lightgreen;
@@ -430,6 +439,10 @@ hr {
 .event:hover, .searchSuggestion:hover {
   transition: transform .1s ease-in-out;
   transform: scale(1.01);
+}
+
+button, button:hover {
+  transition: background-color .3s ease;
 }
 
 

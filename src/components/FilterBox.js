@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import CrossWhite from './../images/cross-white.svg';
 import CrossDark from './../images/cross-dark.svg';
+import CrossDarkLarge from './../images/cross-dark-large.svg';
 import FilterOption from './FilterOption';
 import SearchSuggestion from './SearchSuggestion';
 
@@ -66,7 +67,7 @@ render(){
       <div className="flex spaceBetween">
         <div></div>
         <button onClick={ this.closeFilterBox } className="close">
-          <img src={ CrossWhite } alt="Close"/>
+          <img src={ CrossDarkLarge } alt="Close"/>
         </button>
       </div>
       { this.props.visibility &&
@@ -151,7 +152,7 @@ render(){
         </div>
       </div>
       <button onClick={ this.closeFilterBox } className="okSearch">
-        Filter
+        Filtrera
       </button>
 
     </div>

@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/***************************************/
+/************** VARIABLES **************/
+/***************************************/
 ul {
   list-style: none; }
 
@@ -41,9 +44,9 @@ button {
   font-size: 2em; }
 
 .okSearch {
-  background: white;
+  background: lightblue;
   color: #333;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   width: auto;
   height: 40px;
   font-size: 1em;
@@ -213,7 +216,7 @@ hr {
   justify-content: space-between;
   background: #fff;
   margin: 0 auto 10px;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1); }
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); }
   .events .event .date-box {
     text-align: left;
     background: #333;
@@ -251,7 +254,7 @@ hr {
   color: #333;
   padding: 7px;
   margin-bottom: 10px;
-  box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer; }
   .searchSuggestion h3 {
     font-size: 1rem;
@@ -271,7 +274,7 @@ hr {
   z-index: 998;
   overflow: scroll;
   transform: translateY(-100vh);
-  box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.3); }
+  box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.1); }
   .filterBox h4 {
     letter-spacing: 0.01rem;
     font-size: .8rem;
@@ -290,7 +293,8 @@ hr {
       text-align: center;
       display: flex;
       justify-content: center;
-      align-items: center; }
+      align-items: center;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); }
     .filterBox .filterBoxes .active {
       background: lightgreen;
       color: #333; }
@@ -361,6 +365,9 @@ hr {
   transition: transform .1s ease-in-out;
   transform: scale(1.01); }
 
+button, button:hover {
+  transition: background-color .3s ease; }
+
 @keyframes animateIn {
   from {
     opacity: 0;
@@ -393,8 +400,8 @@ hr {
   /*************** INFOBOX ***************/
   /***************************************/
   .infoBox {
-    height: 70vh;
-    transform: translateY(70vh); }
+    height: 60vh;
+    transform: translateY(60vh); }
   .infoHeader, .info {
     flex-direction: row; }
   .left, .right {
