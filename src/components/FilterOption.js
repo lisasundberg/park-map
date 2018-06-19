@@ -14,9 +14,7 @@ toggleFilter = () => {
       this.props.addFilter(this.props.name);
   }
 }
-// filterOptionValue = (this.props.className) => {
-//
-// }
+
   render() {
     return(
       <div

@@ -9,7 +9,6 @@ class FilterBox extends Component {
 
   state = {
     chosenFilters: [],
-    // filterOptionState: 'inactive'
     visibility: false
   }
 
@@ -50,7 +49,7 @@ class FilterBox extends Component {
 
 render(){
   return (
-    <div>
+    <React.Fragment>
       <div className="chosenFilters">
         { this.state.chosenFilters.map((filter, index) => {
             return (
@@ -96,58 +95,49 @@ render(){
         </div>
         <div className="filterBoxes grid">
           <FilterOption
-            name="bbq"
+            name="Bad"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
-            // className={this.state.filterOptionState}
           />
           <FilterOption
-            name="swim"
+            name="Grillning"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
-            // className={ this.state.filterOptionState }
           />
           <FilterOption
-            name="gym"
+            name="Toaletter"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
-            // className={ this.state.filterOptionState }
           />
           <FilterOption
-            name="booze"
+            name="Utsikt"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
-            // className={ this.state.filterOptionState }
           />
           <FilterOption
-            name="bad"
+            name="Tillgängligt"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
-            // className={ this.state.filterOptionState }
           />
           <FilterOption
-            name="bad"
+            name="Alkohol"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
-            // className={ this.state.filterOptionState }
           />
           <FilterOption
-            name="bad"
+            name="Utegym"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
-            // className={ this.state.filterOptionState }
           />
           <FilterOption
-            name="bad"
+            name="Boule"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
-            // className={ this.state.filterOptionState }
           />
           <FilterOption
-            name="bad"
+            name="Minigolf"
             addFilter={this.getFilterValue}
             removeFilter={this.removeFilterValue}
-            // className={ this.state.filterOptionState }
           />
         </div>
       </div>
@@ -156,7 +146,7 @@ render(){
       </button>
 
     </div>
-    </div>
+    </React.Fragment>
   )}}
 
 export default FilterBox;

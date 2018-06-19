@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Search from './../images/search.svg';
 function Header(props){
   return(
     <header className="App-header">
@@ -7,10 +7,10 @@ function Header(props){
       <div id="filterOutputBox"></div>
       <input type="text"
              className="searchInput"
-             placeholder="sök"
              onFocus={ props.onFocus }
              onChange={ props.onChange }>
       </input>
+      <img src={ Search } alt="Search" className="search"/>
     </header>
   );
 }

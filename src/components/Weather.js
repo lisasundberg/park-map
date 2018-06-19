@@ -4,7 +4,7 @@ import Sunny from './../images/sunny.svg';
 
 function Weather(){
 return (
-  <div className="weatherContainer flex row vCenter">
+  <div className="weatherContainer flex row vCenter spaceAround">
     <div className="weather">
       <div><img src={ Sunny } alt="Sunny" className="sunny" /></div>
       <p>23´c</p>

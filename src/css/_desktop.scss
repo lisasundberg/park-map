@@ -1,17 +1,30 @@
-
-
 body {
   overflow: hidden;
 }
 
-.infoBox {
-  width: 75%;
+.searchInput {
+  width: 33px;
+  background-color: rgba(255,255,255,.7);
+  transition: width .3s;
+}
+.searchInput:focus {
+  width: calc(20% - 1em);
+  background-color: rgba(255,255,255,1);
+  transition: width .3s;
 }
 
-.searchInput {
-  z-index: 999;
+.infoBox {
+  width: 80%;
 }
+
 .filterBox {
   height: calc(100vh - 7vh);
-  width: 25%;
+  width: 20%;
+}
+
+.weatherContainer {
+  justify-content: flex-start;
+}
+.weather {
+  margin-right: 100px;
 }

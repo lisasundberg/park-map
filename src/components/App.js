@@ -16,6 +16,7 @@ class App extends Component {
     this.setState({
       filterBoxClassName: 'visible'
     });
+    console.log(this.refs.infoBox);
   }
 
   closeFilterBox = () => {

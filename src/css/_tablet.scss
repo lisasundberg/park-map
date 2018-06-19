@@ -6,6 +6,12 @@ html {
   font-size: 14px;
 }
 
+/***************************************/
+/**************** GENERAL***************/
+/***************************************/
+hr.mobile {
+  display: none;
+}
 
 /***************************************/
 /*************** INFOBOX ***************/
@@ -27,16 +33,57 @@ html {
 /***************************************/
 /*************** FILTER ****************/
 /***************************************/
-.searchInput {
-  z-index: 999;
-  width: 23vw;
+.searchInput {
+  width:0px;
+  background-color: none;
+  transition: width, background-color .5s;
 }
+.searchInput:focus {
+  width: 100%;
+  background-color: white;
+  transition: width .5s;
+}
+
 .filterBox {
-  // height: calc(30vh - 7vh);
   height: auto;
   width: 33%;
+  .filterBoxes {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
 }
 
 .chosenFilters {
-  right: 26vw;
+  display: block;
+  position: absolute;
+  top:16px;
+  right: 20vw;
+  .cross {
+    padding-left:5px;
+    cursor: pointer;
+  }
+}
+.filterItem {
+  padding: 4px 12px;
+  display: inline-block;
+  background: lightblue;
+  color: #333;
+  border-radius: 12px;
+  font-size: .9em;
+  margin: 0 6px 5px 0;
+}
+
+
+/***************************************/
+/************* TRANSITIONS *************/
+/***************************************/
+.searchInput {
+  width: 33px;
+  background-color: rgba(255,255,255,.7);
+  transition: width .3s;
+}
+.searchInput:focus {
+  width: 100%;
+  background-color: rgba(255,255,255,1);
+  transition: width .3s;
 }

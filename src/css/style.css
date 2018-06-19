@@ -2,8 +2,20 @@
 /***************************************/
 /************** VARIABLES **************/
 /***************************************/
+/***************************************/
+/**************** RESET ****************/
+/***************************************/
 ul {
-  list-style: none; }
+  list-style: none;
+  -webkit-padding-start: 0;
+  -webkit-margin-before: 0; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+input {
+  -webkit-appearance: none; }
 
 /***************************************/
 /************* TYPOGRAPHY **************/
@@ -12,17 +24,13 @@ html {
   font-size: 12px; }
 
 body {
-  font-family: 'Circular Std'; }
+  font-family: "Circular Std" !important; }
 
 div {
   box-sizing: border-box; }
 
 h4 {
   margin: 0 0 10px; }
-
-a {
-  color: inherit;
-  text-decoration: none; }
 
 /***************************************/
 /*************** BUTTONS ***************/
@@ -50,7 +58,7 @@ button {
   width: auto;
   height: 40px;
   font-size: 1em;
-  margin: 20px; }
+  margin: 20px 0; }
 
 .okSearch:hover {
   background: lightgreen; }
@@ -59,7 +67,6 @@ button {
 /*************** INPUTS ****************/
 /***************************************/
 input {
-  -webkit-appearance: none;
   border: 0;
   outline: 0;
   text-indent: 8px;
@@ -76,7 +83,7 @@ input[type=text]  {
     outline: none; }
 
 /***************************************/
-/**************** FLEX *****************/
+/************ FLEX + GRID **************/
 /***************************************/
 .flex {
   display: flex; }
@@ -87,14 +94,17 @@ input[type=text]  {
 .column {
   flex-direction: column; }
 
-.alignCenter {
-  align-items: center; }
-
 .vCenter {
   align-items: center; }
 
+.hCenter {
+  justify-content: center; }
+
 .spaceBetween {
   justify-content: space-between; }
+
+.spaceAround {
+  justify-content: space-around; }
 
 .grid {
   display: grid; }
@@ -134,9 +144,6 @@ input[type=text]  {
 /***************************************/
 /*************** INFOBOX ***************/
 /***************************************/
-ul {
-  -webkit-padding-start: 0; }
-
 .infoHeader, .info {
   display: flex;
   justify-content: space-between;
@@ -149,10 +156,24 @@ ul {
   flex-direction: row; }
   .infoHeader h2 {
     font-size: 3em;
-    margin: .5em 0; }
+    margin: .5em 0 0; }
 
 .info {
   flex-direction: column; }
+
+.share {
+  background: #333;
+  font-size: 12px;
+  padding: 0 .5em;
+  margin: 6px 5% 12px;
+  width: 70px;
+  height: 29px;
+  color: #f6f6f6;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer; }
+  .share img {
+    height: 13px;
+    margin-left: 5px; }
 
 .infoBox {
   box-sizing: border-box;
@@ -174,19 +195,25 @@ ul {
 
 hr {
   width: 160px;
-  height: 1px;
-  border: 1px solid rgba(0, 0, 0, 0.03);
+  height: 0px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
   margin: 30px auto; }
 
+hr.mobile {
+  display: block; }
+
 /*** PARK FEATURES ***/
-.features li {
-  padding: 0 0 10px; }
-
-.features .true {
-  list-style: url("../images/checkmark.svg"); }
-
-.features .false {
-  list-style: url("../images/cross-dark-large.svg"); }
+.infoBox .features {
+  padding-left: 6%; }
+  .infoBox .features:nth-child(2) {
+    margin-left: 30px; }
+  .infoBox .features li {
+    padding: 0 0 10px; }
+  .infoBox .features .true {
+    list-style: url("../images/checkmark.svg"); }
+  .infoBox .features .false {
+    list-style: url("../images/cross-dark-large.svg");
+    opacity: .5; }
 
 .sunset {
   padding: 2em 0; }
@@ -200,7 +227,6 @@ hr {
 /**************** WEATHER **************/
 /***************************************/
 .weather {
-  margin-right: 60px;
   text-align: center;
   padding-top: 20px; }
 
@@ -239,8 +265,19 @@ hr {
 /**************** FILTER ***************/
 /***************************************/
 .searchInput  {
-  z-index: 999 !important;
-  width: 100%; }
+  background-color: none;
+  width: 0px;
+  border: 3px #333; }
+
+.searchInput:focus {
+  width: 100%;
+  background-color: white;
+  transition: width .5s; }
+
+img.search {
+  position: absolute;
+  right: 17px;
+  top: 17px; }
 
 .searchSuggestions {
   margin-bottom: 40px; }
@@ -271,7 +308,6 @@ hr {
   background: #f6f6f6;
   color: #333;
   right: 0;
-  z-index: 998;
   overflow: scroll;
   transform: translateY(-100vh);
   box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.1); }
@@ -287,7 +323,7 @@ hr {
     align-items: stretch; }
     .filterBox .filterBoxes div {
       height: 70px;
-      background: #666;
+      background: #bbb;
       display: inline-block;
       cursor: pointer;
       text-align: center;
@@ -300,28 +336,13 @@ hr {
       color: #333; }
 
 .chosenFilters {
-  position: absolute;
-  top: 16px;
-  z-index: 9999; }
-  .chosenFilters .cross {
-    padding-left: 5px;
-    cursor: pointer; }
-
-.filterItem {
-  padding: 4px 12px;
-  display: inline-block;
-  background: lightblue;
-  color: #333;
-  border-radius: 12px;
-  font-size: .9em;
-  margin: 0 6px 5px 0;
-  transition: ease 1s; }
+  display: none; }
 
 /***************************************/
 /*********** INSTAGRAM FEED ************/
 /***************************************/
 .instagramContainer {
-  padding: 0 5% 5%; }
+  padding: 0 5%; }
   .instagramContainer .instagramFeed {
     width: 100%;
     display: flex;
@@ -333,6 +354,33 @@ hr {
   margin: 1px 3px; }
   .imageContainer img {
     width: 100%; }
+
+/***************************************/
+/*************** UPDATED ***************/
+/***************************************/
+.updated {
+  padding: 5% 0 6%;
+  text-align: center; }
+  .updated small {
+    opacity: .3; }
+
+/***************************************/
+/************** Z-INDEXES **************/
+/***************************************/
+.filterBox {
+  z-index: 10; }
+
+.App-header {
+  z-index: 20; }
+
+.chosenFilters {
+  z-index: 21; }
+
+.searchInput {
+  z-index: 22; }
+
+img.search {
+  z-index: 23; }
 
 /***************************************/
 /************* TRANSITIONS *************/
@@ -357,11 +405,21 @@ hr {
   transition: transform .1s ease-in-out;
   transform: scale(1.04); }
 
-.event, .searchSuggestion {
-  transition: transform .1s ease;
+.searchInput {
+  width: 33px;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: width .3s; }
+
+.searchInput:focus {
+  width: calc(100% - 1em);
+  background-color: white;
+  transition: width .3s; }
+
+.event, .searchSuggestion, .share {
+  transition: transform 30ms ease;
   cursor: pointer; }
 
-.event:hover, .searchSuggestion:hover {
+.event:hover, .searchSuggestion:hover, .share:hover {
   transition: transform .1s ease-in-out;
   transform: scale(1.01); }
 
@@ -378,7 +436,7 @@ button, button:hover {
 
 .searchSuggestion, .info {
   animation-name: animateIn;
-  animation-duration: 1s; }
+  animation-duration: .5s; }
 
 @keyframes popIn {
   from {
@@ -397,6 +455,11 @@ button, button:hover {
   html {
     font-size: 14px; }
   /***************************************/
+  /**************** GENERAL***************/
+  /***************************************/
+  hr.mobile {
+    display: none; }
+  /***************************************/
   /*************** INFOBOX ***************/
   /***************************************/
   .infoBox {
@@ -409,22 +472,65 @@ button, button:hover {
   /***************************************/
   /*************** FILTER ****************/
   /***************************************/
-  .searchInput {
-    z-index: 999;
-    width: 23vw; }
+  .searchInput  {
+    width: 0px;
+    background-color: none;
+    transition: width, background-color .5s; }
+  .searchInput:focus {
+    width: 100%;
+    background-color: white;
+    transition: width .5s; }
   .filterBox {
     height: auto;
     width: 33%; }
+    .filterBox .filterBoxes {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr; }
   .chosenFilters {
-    right: 26vw; } }
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 20vw; }
+    .chosenFilters .cross {
+      padding-left: 5px;
+      cursor: pointer; }
+  .filterItem {
+    padding: 4px 12px;
+    display: inline-block;
+    background: lightblue;
+    color: #333;
+    border-radius: 12px;
+    font-size: .9em;
+    margin: 0 6px 5px 0; }
+  /***************************************/
+  /************* TRANSITIONS *************/
+  /***************************************/
+  .searchInput {
+    width: 33px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: width .3s; }
+  .searchInput:focus {
+    width: 100%;
+    background-color: white;
+    transition: width .3s; } }
 
 @media screen and (min-width: 992px) {
   body {
     overflow: hidden; }
-  .infoBox {
-    width: 75%; }
   .searchInput {
-    z-index: 999; }
+    width: 33px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: width .3s; }
+  .searchInput:focus {
+    width: calc(20% - 1em);
+    background-color: white;
+    transition: width .3s; }
+  .infoBox {
+    width: 80%; }
   .filterBox {
     height: calc(100vh - 7vh);
-    width: 25%; } }
+    width: 20%; }
+  .weatherContainer {
+    justify-content: flex-start; }
+  .weather {
+    margin-right: 100px; } }
