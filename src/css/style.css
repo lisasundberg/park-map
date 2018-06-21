@@ -132,14 +132,27 @@ input[type=text]  {
   width: 100%; }
 
 .pin {
+  color: #333;
   text-align: center;
-  transform: translate(-10px, -40px); }
+  transform: translate(-10px, -40px);
+  transition: transform .05s ease;
+  cursor: pointer; }
 
 .fa-map-marker {
   font-size: 40px; }
 
+.fa-map-marker:hover {
+  transform: translate(0, -5px);
+  transition: transform .05s ease;
+  color: #4a8a6f; }
+
 .pin-title {
-  font-weight: bold; }
+  font-family: "Circular Std" !important;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 2px;
+  background: white;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); }
 
 /***************************************/
 /*************** INFOBOX ***************/
@@ -156,17 +169,18 @@ input[type=text]  {
   flex-direction: row; }
   .infoHeader h2 {
     font-size: 3em;
-    margin: .5em 0 0; }
+    margin: 0; }
+  .infoHeader > div {
+    margin: 2em 0; }
 
 .info {
   flex-direction: column; }
 
 .share {
-  background: #333;
+  background: rgba(0, 0, 0, 0.36);
   font-size: 12px;
-  padding: 0 .5em;
-  margin: 6px 5% 12px;
-  width: 70px;
+  padding: 0 .8em;
+  margin: 0 -4px 0 20px;
   height: 29px;
   color: #f6f6f6;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
@@ -215,13 +229,8 @@ hr.mobile {
     list-style: url("../images/cross-dark-large.svg");
     opacity: .5; }
 
-.sunset {
-  padding: 2em 0; }
-  .sunset small {
-    margin-left: 10px; }
-  .sunset p {
-    font-size: 4em;
-    margin: 0; }
+.rating {
+  padding: 0 5%; }
 
 /***************************************/
 /**************** WEATHER **************/
@@ -233,6 +242,14 @@ hr.mobile {
 .sunny {
   width: 70px;
   height: 70px; }
+
+.sunset {
+  padding: 2em 0; }
+  .sunset small {
+    margin-left: 10px; }
+  .sunset p {
+    font-size: 4em;
+    margin: 0; }
 
 /***************************************/
 /**************** EVENTS ***************/
@@ -436,7 +453,7 @@ button, button:hover {
 
 .searchSuggestion, .info {
   animation-name: animateIn;
-  animation-duration: .5s; }
+  animation-duration: 1s; }
 
 @keyframes popIn {
   from {

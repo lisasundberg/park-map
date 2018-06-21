@@ -20,26 +20,43 @@ class Map extends Component {
       { id: 'Vitabergsparken',
         lat: 59.31255,
         lng: 18.087676,
-        features: {
-          swimming: false,
-          bbq: true
-        }
       },
       { id: 'Tantolunden',
         lat: 59.313137,
-        lng: 18.037121,
-        features: {
-          swimming: true,
-          bbq: true
-        }
+        lng: 18.037121
       },
       { id: 'Rålambshovsparken',
         lat: 59.328110,
-        lng: 18.025942,
-        features: {
-          swimming: false,
-          bbq: true
-        }
+        lng: 18.025942
+      },
+      { id: 'Djurgården',
+        lat: 59.329309,
+        lng: 18.114123
+      },
+      {
+        id: 'Eriksdalslunden',
+        lat: 59.304911,
+        lng: 18.071975
+      },
+      {
+        id: 'Skinnarviksberget',
+        lat: 59.319935,
+        lng: 18.050732
+      },
+      {
+        id: 'Ivar Los Park',
+        lat: 59.320573,
+        lng: 18.061132
+      },
+      {
+        id: 'Observatorielunden',
+        lat: 59.340942,
+        lng: 18.055144
+      },
+      {
+        id: 'Vasaparken',
+        lat: 59.340464,
+        lng: 18.044243
       }
     ]
   };

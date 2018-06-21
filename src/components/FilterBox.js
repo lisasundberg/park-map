@@ -77,6 +77,7 @@ render(){
             parkSmekName="Vitan, Vitabergen"
             features="Grill, Alkoholtillstånd, Utsikt"
           />
+          <h4>Du kanske också gillar</h4>
           <SearchSuggestion
             parkName="Tantolunden"
             parkSmekName="Tanto"
