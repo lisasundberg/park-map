@@ -3,6 +3,8 @@ import Cross from './../images/cross-dark-large.svg';
 import Share from './../images/share.svg';
 import Weather from './Weather';
 import Events from './Events';
+import StarEmpty from './../images/star-empty.svg';
+import StarFilled from './../images/star-filled.svg';
 import InstagramFeed from './InstagramFeed';
 
 class InfoBox extends Component {
@@ -16,14 +18,23 @@ class InfoBox extends Component {
     return (
       <div className={`infoBox ${this.props.className}`} ref={ infoBox => this.infoBox = infoBox }>
         <div className="infoHeader">
-          <h2>{ this.props.passData }</h2>
+          <div className="flex vCenter">
+            <h2>{ this.props.passData }</h2>
+            <div className="share flex vCenter hCenter">
+              <p>Dela</p>
+              <img src={ Share } alt="Share" />
+            </div>
+          </div>
           <button onClick={ this.closeInfoBox } className="close">
             <img src={ Cross } alt="Close"/>
           </button>
           </div>
-          <div className="share flex vCenter hCenter">
-            <p>Dela</p>
-            <img src={ Share } alt="Share" />
+          <div className="rating">
+            <img src={StarFilled} alt="Filled star"/>
+            <img src={StarFilled} alt="Filled star"/>
+            <img src={StarFilled} alt="Filled star"/>
+            <img src={StarFilled} alt="Filled star"/>
+            <img src={StarEmpty} alt="Star"/>
           </div>
         <div className="info">
           <div className="left">
